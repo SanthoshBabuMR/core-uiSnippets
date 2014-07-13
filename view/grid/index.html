@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grid - UI Snippet</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/css/module/typography.css" />
+		<link rel="stylesheet" href="/public/css/module/render.css" />
+		<link rel="stylesheet" href="/public/css/uiSnippet/grid.css" />
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="doc-wrap grid">
+		<!-- doc-wrap begin -->
+			<header class="page-header">
+			<!-- page-header template goes here -->
+			</header>
+			<div class="wrapper">
+			<!-- wrapper begin -->
+				<nav class="page-navigation">
+				<!-- page-navigation template goes here -->
+				</nav>
+				<div class="page-content">
+				<!-- page-content begin -->
+					<h1 class="title">Grid</h1>
+					<section class="snippet">
+					<!-- section begin -->
+						<h1 class="title">Two Column Grid</h1>
+						<div class="detail demo">
+						<!-- demo begin -->
+							<h2 class="title">Demo</h2>
+							<div class="insertHtmlDemoGrid">
+							</div>
+						<!-- demo end -->
+						</div>
+						<div class="detail notes">
+						<!-- notes begin -->
+							<h2 class="title">Notes</h2>
+							<div class="grid-a">
+							<!-- grid-a begin -->
+								<div class="row">
+								<!-- row begin -->
+									<div class="col-a">
+										<strong>Dependency</strong>
+									</div>
+									<div class="col-b">
+										HTML, CSS3
+									</div>
+								<!-- row end -->
+								</div>
+								<div class="row">
+								<!-- row begin -->
+									<div class="col-a">
+										<strong>Browser Support</strong>
+									</div>
+									<div class="col-b">
+										Chrome latest, Firefox latest, Safari latest, IE latest
+									</div>
+								<!-- row end -->
+								</div>
+								<div class="row">
+								<!-- row begin -->
+									<div class="col-a">
+										<strong>Usage</strong>
+									</div>
+									<div class="col-b">
+										Form layout
+									</div>
+								<!-- row end -->
+								</div>
+							<!-- grid-a end -->
+							</div>
+								
+						<!-- notes end -->
+						</div>
+						<div class="detail code">
+						<!-- code begin -->
+							<div class="markup">
+								<h2 class="title">Markup</h2>
+								<pre class="prettyprint linenums insertHtmlGrid">
+								</pre>
+							</div>
+							<div class="style">
+								<h2 class="title">Style</h2>
+								<pre class="prettyprint linenums insertCssGrid">
+								</pre>
+							</div>
+						<!-- code end -->
+						</div>
+					<!-- section end -->
+					</section>
+				<!-- page-content end -->
+				</div>
+			<!-- wrapper end -->
+			</div>
+
+		<!-- doc-wrap end -->
+		</div>
+		
+		<div class="loader">
+			<div class="wait">
+				<span>loading ...</span>
+			</div>
+		</div>
+
+		<!-- script begin -->
+		<script src="/public/script/lib/requirejs/require.js"></script>
+		<script>
+			require( ["/public/script/config/pathConfig.js"], function( ) {
+				require( [ "init" ], function( app ) {
+
+					require( [ "jquery", "google-code-prettify", "text!htmlGrid", "text!cssGrid"], function( $, codePrettify, htmlSnippetGrid, cssSnippetGrid ) {
+						$(".insertHtmlDemoGrid").html( htmlSnippetGrid );
+						$(".insertHtmlGrid").html( $('<div />').text( htmlSnippetGrid ).html() );
+						$(".insertCssGrid").html( cssSnippetGrid );
+						codePrettify.prettyPrint();
+						app.revealPage();
+					} );
+
+				} );				
+			})
+		</script>
+		<!-- script end -->
+
+	</body>
+</html>

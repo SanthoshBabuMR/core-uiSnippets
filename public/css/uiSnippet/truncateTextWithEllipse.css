@@ -1,0 +1,12 @@
+/**
+ * truncate text ( component )
+ */
+.truncate {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/**
+ * truncate text ( component )
+ */
