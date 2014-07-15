@@ -14,7 +14,7 @@
 	</head>
 	<body>
 
-		<div class="doc-wrap gridUsingFloat">
+		<div class="doc-wrap tabbedNavigation">
 		<!-- doc-wrap begin -->
 			<header class="page-header">
 			<!-- page-header template goes here -->
@@ -26,48 +26,36 @@
 				</nav>
 				<div class="page-content">
 				<!-- page-content begin -->
-					<h1 class="title">Grid Using float</h1>
+					<h1 class="title">Tabbed Navigation</h1>
 					<section class="snippet">
 					<!-- section begin -->
-						<h1 class="title">Grid using float layout</h1>
+						<h1 class="title">Tabbed Navigation</h1>
 						<div class="tabs-container">
 							<ul class="tabs-heading">
-								<li><a href="#tabbedMarkupTwoColumnGrid">Markup ( Two Column Grid )</a></li>
-								<li><a href="#tabbedMarkupThreeColumnGrid">Markup ( Three Column Grid )</a></li>
-								<li><a href="#tabbedMarkupFourColumnGrid">Markup ( Four Column Grid )</a></li>
-								<li><a href="#tabbedMarkupFiveColumnGrid">Markup ( Five Column Grid )</a></li>
+								<li><a href="#tabbedMarkup">Markup</a></li>
 								<li><a href="#tabbedStyle">Style</a></li>
+								<li><a href="#tabbedBehaviour">Behaviour</a></li>
 								<li><a href="#tabbedNotes">Notes</a></li>
 							</ul>
 							<div class="tabs-content">
-								<div id="tabbedMarkupTwoColumnGrid">
-									<h2 class="title">Markup ( Two Column Grid )</h2>
-									<pre class="prettyprint linenums insertHtmlGridTwoColumn">
-									</pre>
-								</div>
-								<div id="tabbedMarkupThreeColumnGrid">
-									<h2 class="title">Markup ( Three Column Grid )</h2>
-									<pre class="prettyprint linenums insertHtmlGridThreeColumn">
-									</pre>
-								</div>
-								<div id="tabbedMarkupFourColumnGrid">
-									<h2 class="title">Markup ( Four Column Grid )</h2>
-									<pre class="prettyprint linenums insertHtmlGridFourColumn">
-									</pre>
-								</div>
-								<div id="tabbedMarkupFiveColumnGrid">
-									<h2 class="title">Markup ( Five Column Grid )</h2>
-									<pre class="prettyprint linenums insertHtmlGridFiveColumn">
+								<div id="tabbedMarkup">
+									<h2 class="title">Markup</h2>
+									<pre class="prettyprint linenums insertHtmlTabbedNavigation">
 									</pre>
 								</div>
 								<div id="tabbedStyle">
 									<h2 class="title">Style</h2>
-									<pre class="prettyprint linenums insertCssGrid">
+									<pre class="prettyprint linenums insertCssTabbedNavigation">
+									</pre>
+								</div>
+								<div id="tabbedBehaviour">
+									<h2 class="title">Behaviour</h2>
+									<pre class="prettyprint linenums insertScriptTabbedNavigation">
 									</pre>
 								</div>
 								<div id="tabbedNotes">
 									<h2 class="title">Notes</h2>
-									<div class="insertNotesGrid">
+									<div class="insertNotesTabbedNavigation">
 									</div>									
 								</div>
 							</div>
@@ -95,13 +83,12 @@
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "init" ], function( app ) {
 					app.preInit();
-					require( [ "jquery", "text!htmlGridTwoColumn", "text!htmlGridThreeColumn", "text!htmlGridFourColumn", "text!htmlGridFiveColumn", "text!cssGrid", "text!notesGrid" ], function( $, htmlGridTwoColumn, htmlGridThreeColumn, htmlGridFourColumn, htmlGridFiveColumn, cssGrid, notesGrid ) {
-						$(".insertHtmlGridTwoColumn").html( app.encodeHtml( htmlGridTwoColumn ) );
-						$(".insertHtmlGridThreeColumn").html( app.encodeHtml( htmlGridThreeColumn ) );
-						$(".insertHtmlGridFourColumn").html( app.encodeHtml( htmlGridFourColumn ) );
-						$(".insertHtmlGridFiveColumn").html( app.encodeHtml( htmlGridFiveColumn ) );
-						$(".insertCssGrid").html( cssGrid );
-						$(".insertNotesGrid").html( notesGrid );
+					require( [ "jquery", "text!htmlTabbedNavigation", "text!cssTabbedNavigation", "text!scriptTabbedNavigationtmpl", "text!notesTabbedNavigation" ], function( $, htmlTabbedNavigation, cssTabbedNavigation, scriptTabbedNavigation, notesTabbedNavigation ) {
+						console.log( scriptTabbedNavigation )
+						$(".insertHtmlTabbedNavigation").html( app.encodeHtml( htmlTabbedNavigation ) );
+						$(".insertCssTabbedNavigation").html( cssTabbedNavigation );
+						$(".insertScriptTabbedNavigation").html( scriptTabbedNavigation );
+						$(".insertNotesTabbedNavigation").html( notesTabbedNavigation );
 						app.postInit();
 					} );
 				} );				

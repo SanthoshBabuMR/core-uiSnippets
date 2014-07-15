@@ -7,15 +7,15 @@
 		<!-- css begin -->
 		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
 		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
-		<link rel="stylesheet" href="/public/css/module/typography.css" />
 		<link rel="stylesheet" href="/public/css/module/render.css" />
-		<link rel="stylesheet" href="/public/css/uiSnippet/grid.css" />
-		<link rel="stylesheet" href="/public/css/uiSnippet/truncateTextWithEllipse.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/grid/default/grid.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/tabbedNavigation/default/tabbedNavigation.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/truncateTextWithEllipse/default/truncateTextWithEllipse.css" />
 		<!-- css end -->
 	</head>
 	<body>
 
-		<div class="doc-wrap truncate-text-with-ellipse">
+		<div class="doc-wrap truncateTextWithEllipse">
 		<!-- doc-wrap begin -->
 			<header class="page-header">
 			<!-- page-header template goes here -->
@@ -30,67 +30,31 @@
 					<h1 class="title">Truncate Text With Ellipse</h1>
 					<section class="snippet">
 					<!-- section begin -->
-						<h1 class="title">Truncate Text</h1>
-						<div class="detail demo">
-						<!-- demo begin -->
-							<h2 class="title">Demo</h2>
-							<div class="insertHtmlDemoTruncateTextWithEllipse">
-							</div>
-						<!-- demo end -->
-						</div>
-						<div class="detail notes">
-						<!-- notes begin -->
-							<h2 class="title">Notes</h2>
-							<div class="grid-a">
-							<!-- grid-a begin -->
-								<div class="row">
-								<!-- row begin -->
-									<div class="col-a">
-										<strong>Dependency</strong>
-									</div>
-									<div class="col-b">
-										HTML, CSS3
-									</div>
-								<!-- row end -->
+						<h1 class="title">Truncate Text With Ellipse</h1>
+						<div class="tabs-container">
+							<ul class="tabs-heading">
+								<li><a href="#tabbedMarkup">Markup</a></li>
+								<li><a href="#tabbedStyle">Style</a></li>
+								<li><a href="#tabbedNotes">Notes</a></li>
+							</ul>
+							<div class="tabs-content">
+								<div id="tabbedMarkup">
+									<h2 class="title">Markup</h2>
+									<pre class="prettyprint linenums insertHtmlTruncateTextWithEllipse">
+									</pre>
 								</div>
-								<div class="row">
-								<!-- row begin -->
-									<div class="col-a">
-										<strong>Browser Support</strong>
-									</div>
-									<div class="col-b">
-										Chrome latest, Firefox latest, Safari latest, IE latest
-									</div>
-								<!-- row end -->
+								<div id="tabbedStyle">
+									<h2 class="title">Style</h2>
+									<pre class="prettyprint linenums insertCssTruncateTextWithEllipse">
+									</pre>
 								</div>
-								<div class="row">
-								<!-- row begin -->
-									<div class="col-a">
-										<strong>Usage</strong>
-									</div>
-									<div class="col-b">
-										Mobile Headings
-									</div>
-								<!-- row end -->
+								<div id="tabbedNotes">
+									<h2 class="title">Notes</h2>
+									<div class="insertNotesTruncateTextWithEllipse">
+									</div>									
 								</div>
-							<!-- grid-a end -->
 							</div>
-								
-						<!-- notes end -->
-						</div>
-						<div class="detail code">
-						<!-- code begin -->
-							<div class="markup">
-								<h2 class="title">Markup</h2>
-								<pre class="prettyprint linenums insertHtmlTruncateTextWithEllipse">
-								</pre>
-							</div>
-							<div class="style">
-								<h2 class="title">Style</h2>
-								<pre class="prettyprint linenums insertCssTruncateTextWithEllipse">
-								</pre>
-							</div>
-						<!-- code end -->
+							<div class="clrflt"></div>
 						</div>
 					<!-- section end -->
 					</section>
@@ -103,7 +67,7 @@
 		</div>
 		
 		<div class="loader">
-			<div class="wait">
+			<div class="msg">
 				<span>loading ...</span>
 			</div>
 		</div>
@@ -113,15 +77,13 @@
 		<script>
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "init" ], function( app ) {
-
-					require( [ "jquery", "google-code-prettify", "text!htmlTruncateTextWithEllipse", "text!cssTruncateTextWithEllipse"], function( $, codePrettify, htmlSnippetGrid, cssSnippetGrid ) {
-						$(".insertHtmlDemoTruncateTextWithEllipse").html( htmlSnippetGrid );
-						$(".insertHtmlTruncateTextWithEllipse").html( $('<div />').text( htmlSnippetGrid ).html() );
-						$(".insertCssTruncateTextWithEllipse").html( cssSnippetGrid );
-						codePrettify.prettyPrint();
-						app.revealPage();
+					app.preInit();
+					require( [ "jquery", "text!htmlTruncateTextWithEllipse", "text!cssTruncateTextWithEllipse", "text!notesTruncateTextWithEllipse" ], function( $, htmlTruncateTextWithEllipse, cssTruncateTextWithEllipse, notesTruncateTextWithEllipse ) {
+						$(".insertHtmlTruncateTextWithEllipse").html( app.encodeHtml( htmlTruncateTextWithEllipse ) );
+						$(".insertCssTruncateTextWithEllipse").html( cssTruncateTextWithEllipse );
+						$(".insertNotesTruncateTextWithEllipse").html( notesTruncateTextWithEllipse );
+						app.postInit();
 					} );
-
 				} );				
 			})
 		</script>

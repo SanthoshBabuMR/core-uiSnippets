@@ -35,7 +35,7 @@
 		</div>
 
 		<div class="loader">
-			<div class="wait">
+			<div class="msg">
 				<span>loading ...</span>
 			</div>
 		</div>
@@ -45,8 +45,9 @@
 		<script>
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "init" ], function( app ) {
-						app.revealPage();
-				} );
+					app.preInit();
+					app.revealPage();
+				} );				
 			})
 		</script>
 

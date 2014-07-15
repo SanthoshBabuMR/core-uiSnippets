@@ -1,4 +1,17 @@
 /**
+ * standalone CSS file for rendering web-page
+ * @file render.css
+ *
+ * reset / generic 		- reset specific to the page at element level and class level
+ *						  ( doc-wrap )
+ * typography			- include font-face
+ * component			- reusable components
+ * 						  ( loader, tabs-container )
+ * layout 				- layout specific to the page
+ *						  ( page-header, page-navigation, page-content, snippet )
+ */
+
+/**
  * doc-wrap begin ( reset / generic )
  */
 *,
@@ -10,15 +23,23 @@ body {
 	background: #ffffff;
 }
 .doc-wrap {
-	display: none;
+	opacity: 0;
 	font-family: openSansRegular, arial;
 	font-size: 14px;
 	line-height: 1.5;
 	color: #333333;
 	border-bottom: 10px solid #428bca;
 	height: 100%;
+	-webkit-transition: opacity .3s;
+	-moz-transition: opacity .3s;
+    transition: opacity .3s;
 }
-.doc-wrap.show,
+.doc-wrap.reveal {
+	opacity: 1;
+	-webkit-transition: opacity .6s;
+	-moz-transition: opacity .6s;
+    transition: opacity .6s;
+}
 .show {
 	display: block !important;
 }
@@ -52,14 +73,24 @@ body {
 .doc-wrap a:visited {
 	color: #428bca;
 	text-decoration: none;
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+    transition: all .6s;
 }
 .doc-wrap a:hover {
 	text-decoration: underline;
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+    transition: all .6s;
+}
+.doc-wrap a:focus {
+	outline: 1px solid #111;
 }
 .doc-wrap .enfold {
 	padding: 0 10px;
 }
-.doc-wrap .title {
+.doc-wrap .title,
+.doc-wrap .sub-title {
 	font-family: openSansLight, arial;
 	letter-spacing: .01em;
 	font-weight: 500;
@@ -69,6 +100,67 @@ body {
 }
 /**
  * doc-wrap end ( reset / generic )
+ */
+
+/**
+ * font-face begin ( typography )
+ */
+@font-face {
+    font-family: 'openSansRegular';
+    src: url('/public/font/opensans-regular-webfont.eot');
+    src: url('/public/font/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/font/opensans-regular-webfont.woff') format('woff'),
+         url('/public/font/opensans-regular-webfont.ttf') format('truetype'),
+         url('/public/font/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'openSansLight';
+    src: url('/public/font/opensans-light-webfont.eot');
+    src: url('/public/font/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/font/opensans-light-webfont.woff') format('woff'),
+         url('/public/font/opensans-light-webfont.ttf') format('truetype'),
+         url('/public/font/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'openSansItalic';
+    src: url('/public/font/opensans-italic-webfont.eot');
+    src: url('/public/font/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/public/font/opensans-italic-webfont.woff') format('woff'),
+         url('/public/font/opensans-italic-webfont.ttf') format('truetype'),
+         url('/public/font/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'openSansLightItalic';
+    src: url('opensans-lightitalic-webfont.eot');
+    src: url('opensans-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-lightitalic-webfont.woff') format('woff'),
+         url('opensans-lightitalic-webfont.ttf') format('truetype'),
+         url('opensans-lightitalic-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'openSansBold';
+    src: url('opensans-bold-webfont.eot');
+    src: url('opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-bold-webfont.woff') format('woff'),
+         url('opensans-bold-webfont.ttf') format('truetype'),
+         url('opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/**
+ * font-face end ( typography )
  */
 
 /**
@@ -82,11 +174,11 @@ body {
 	left: 0;
 	background: #eeeeee;
 	background: rgba(0, 0, 0, .2);
-	-webkit-transition: height 12s;
-	-moz-transition: height 12s;
-    transition: height 12s;
+	-webkit-transition: height .6s;
+	-moz-transition: height .6s;
+    transition: height .6s;
 }
-.loader .wait {
+.loader .msg {
 	width: 100%;
 	position: absolute;
 	top: 40%;
@@ -95,18 +187,17 @@ body {
 	left: 0;
 	text-align: center;
 	color: #000000;
-	-webkit-transition: left 0.6s, width 0.6s;
-	-moz-transition: left 0.6s, width 0.6s;
-    transition: left 0.6s, width 0.6s;
+	-webkit-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+    transition: all 0.6s;
 }
 .loader.hide {
-	left: 50%;
-	width: 0%;
-	-webkit-transition: left 0.6s, width 0.6s;
-	-moz-transition: left 0.6s, width 0.6s;
-    transition: left 0.6s, width 0.6s;
+	top: -100%;
+	-webkit-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+    transition: all 0.6s;
 }
-.loader.hide .wait {
+.loader.hide .msg {
 	display: none;
 }
 /**
@@ -152,24 +243,29 @@ body {
 	height: 0;
 	line-height: 0;
 }
-.page-navigation .row {
+.page-navigation .nav-list {
 	border-bottom: 1px solid #cccccc;
 	padding: 1px 0;
 }
-.page-navigation .int-link {
+.page-navigation a {
 	display: block;
 	width: 100%;
 	font-family: "openSansItalic", arial;
 	font-size: 18px;
-	padding: 5px 0;
+	padding: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-.page-navigation .int-link:before {
-	content: " ";
-	display: inline;
+.page-navigation a:hover,
+.page-navigation a:focus {
+	text-overflow: initial;
+	overflow: auto;
 }
 .home .home,
-.grid .grid,
-.truncate-text-with-ellipse .truncate-text-with-ellipse {
+.gridUsingFloat .gridUsingFloat,
+.truncateTextWithEllipse .truncateTextWithEllipse,
+.tabbedNavigation .tabbedNavigation {
 	background: #efefef;
 }
 /**
@@ -193,7 +289,7 @@ body {
  */
 
 /**
- * section begin ( component )
+ * snippet begin ( layout )
  */
 .snippet > .title {
 	font-size: 1.71em;
@@ -201,25 +297,21 @@ body {
 .snippet > .title:before {
 	content: "#";
 }
-.snippet .usage {
-
+.snippet .tabs-content {
+	min-height: 500px;
+	overflow: auto;
 }
-.snippet .notes {
-	
-}
-.snippet .code {
-	
-}
-.snippet .detail .title {
+.snippet .sub-title {
 	margin: 0;
 	padding: 3px 0 3px 12px;
 	font-size: 1.5em;
 	background: #6f5499;
 	color: #eeeeee;
 }
-.snippet .detail .prettyprint {
-	margin: 0 0 10px 0;
+.snippet .prettyprint {
+	margin: 0;
+	max-height: 450px;
 }
 /**
- * section end ( component )
+ * snippet end ( layout )
  */
