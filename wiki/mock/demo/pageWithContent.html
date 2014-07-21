@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page With Content - Demo</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/module/demo.css" />
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="doc-wrap gridUsingFloat">
+		<!-- doc-wrap begin -->
+			
+			<header class="page-header">
+			<!-- page-header begin -->
+				<h1>HTML</h1>
+			<!-- page-header end -->
+			</header>
+
+			<div class="wrapper">
+			<!-- wrapper begin -->
+				<p>Markup language used to create web pages</p>
+			<!-- wrapper end -->
+			</div>
+
+		<!-- doc-wrap end -->
+		</div>
+		
+		<!-- script begin -->
+		<script src="/public/script/lib/requirejs/require.js"></script>
+		<script>
+			require( ["/public/script/config/pathConfig.js"], function( ) {
+				require( [ "scriptSample" ], function( sampleApp ) {
+					// DO STUFF HERE
+				} );				
+			})
+		</script>
+		<!-- script end -->
+
+	</body>
+</html>

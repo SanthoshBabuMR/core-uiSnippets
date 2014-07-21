@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grid Using Float - Demo</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/css/module/demo.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/gridUsingFloat/style.css" />
+
+		<style>
+		.demo-container .grid-a {
+			width: 450px;
+			border: 1px solid #cccccc;
+			font-size: 1.2em;
+		}
+		.demo-container input {
+			width: 100%;
+		}
+		</style>
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+		<!-- doc-wrap begin -->
+			<div class="demo-container">
+			<!-- demo-container begin -->
+				<h1>Login</h1>
+				<form name="login" id="login" method="post" action="#">
+					<div class="grid-a">
+					<!-- grid-a begin -->
+						<div class="row">
+						<!-- row begin -->
+							<div class="col-a">
+								<label for="username">UserName</label>
+							</div>
+							<div class="col-b">
+								<input type="text" id="username" name="username" />
+							</div>
+						<!-- row end -->
+						</div>
+						<div class="row">
+						<!-- row begin -->
+							<div class="col-a">
+								<label for="userpassword">Password</label>
+							</div>
+							<div class="col-b">
+								<input type="password" id="userpassword" name="userpassword" />
+							</div>
+						<!-- row end -->
+						</div>
+						<div class="row">
+						<!-- row begin -->
+							<div class="col-z">
+								<input type="button" value="login" />
+							</div>
+						<!-- row end -->
+						</div>
+					<!-- grid-a end -->
+					</div>
+				</form>
+
+			<!-- demo-cotainer end -->
+			</div>
+		<!-- doc-wrap end -->
+		</div>
+
+	</body>
+</html>

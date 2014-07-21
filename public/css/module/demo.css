@@ -1,0 +1,65 @@
+/**
+ * standalone CSS file for demo web-page
+ * @file demo.css
+ *
+ * reset / generic 		- reset specific to the page at element level and class level
+ *						  ( demo-wrap )
+ * typography			- include font-face
+ * component			- reusable components
+ * 						  ( loader, tabs-container )
+ * layout 				- layout specific to the page
+ *						  ( page-header, page-navigation, page-content, snippet )
+ */
+
+/**
+ * reset / generic begin
+ */
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+body {
+	
+}
+.demo-wrap {
+	font-family: verdana, arial;
+	font-size: 14px;
+	color: #333333;
+	height: 100%;
+	-webkit-transition: opacity .3s;
+	-moz-transition: opacity .3s;
+    transition: opacity .3s;
+}
+.demo-wrap h1 {
+	font-size: 2.5em;
+	line-height: 1.3;
+	margin: 0 0 10px 0;
+	font-weight: 400;
+}
+.demo-wrap h2 {
+	font-size: 2.14em;
+	line-height: 1.3;
+	margin: 0 0 10px 0;
+	font-weight: 400;
+}
+.demo-wrap p {
+	margin: 0 0 10px 0;
+}
+.demo-wrap ul,
+.demo-wrap ol {
+	margin: 0 0 10px 0;
+	padding: 0;
+	list-style: none;
+}
+.demo-wrap a,
+.demo-wrap a:link {
+	color: #428bca;
+	text-decoration: none;
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+    transition: all .6s;
+}
+/**
+ * reset / generic end
+ */

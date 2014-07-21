@@ -2,37 +2,50 @@ requirejs.config( {
 	  baseUrl: "/public"
 	, paths : {
 		// external librarires
-		"requireLib" 					: "script/lib/requirejs/require"
-		, "text" 						: "script/lib/requirejs/plugin/text.2.0.12"
-		, "jquery" 						: "script/lib/jquery/jquery.2.1.1"
-		, "google-code-prettify"		: "script/lib/googlePrettify/prettify"
+		"requireLib" 							: "script/lib/requirejs/require"
+		, "text" 								: "script/lib/requirejs/plugin/text.2.0.12"
+		, "jquery" 								: "script/lib/jquery/jquery.2.1.1"
+		, "google-code-prettify"				: "script/lib/googlePrettify/prettify"
 
 		// modules
-		, "init" 						: "script/module/init"
-		, "util" 						: "script/module/util"
-		, "loader" 						: "script/module/loader"
+		, "init" 								: "script/module/init"
+		, "util" 								: "script/module/util"
+		, "loader" 								: "script/module/loader"
 
 		// templates
-		, "pageNavigation" 				: "tmpl/module/pageNavigation.tmpl"
-		, "pageHeader" 					: "tmpl/module/pageHeader.tmpl"
+		, "pageNavigation" 						: "tmpl/module/pageNavigation.tmpl"
+		, "pageHeader" 							: "tmpl/module/pageHeader.tmpl"
+		, "wikiHeader" 							: "tmpl/module/wikiHeader.tmpl"
+		, "wikiNavigation" 						: "tmpl/module/wikiNavigation.tmpl"
+		, "pageMarkup"		 					: "tmpl/module/pageMarkup.tmpl"
+		, "demoMarkup"		 					: "tmpl/module/demoMarkup.tmpl"
+		, "wikiMarkup"		 					: "tmpl/module/wikiMarkup.tmpl"
 
 		// snippets
-		, "htmlGridTwoColumn" 			: "uiSnippet/grid/default/gridTwoColumn.tmpl"
-		, "htmlGridThreeColumn" 		: "uiSnippet/grid/default/gridThreeColumn.tmpl"
-		, "htmlGridFourColumn" 			: "uiSnippet/grid/default/gridFourColumn.tmpl"
-		, "htmlGridFiveColumn" 			: "uiSnippet/grid/default/gridFiveColumn.tmpl"
-		, "cssGrid" 					: "uiSnippet/grid/default/grid.css"
-		, "notesGrid"		 			: "uiSnippet/grid/default/notes.tmpl"
+		, "htmlSample" 							: "uiSnippet/sample/markup.tmpl"
+		, "cssSample" 							: "uiSnippet/sample/style.css"
+		, "scriptSample"						: "uiSnippet/sample/behaviour"
+		, "scriptSampletmpl"					: "uiSnippet/sample/behaviour.js"
+		, "notesSample"							: "uiSnippet/sample/notes.tmpl"
+ 	
+ 		// Grid Using Float
+		, "htmlGridUsingFloatTwoColumn"			: "uiSnippet/gridUsingFloat/markupTwoColumn.tmpl"
+		, "htmlGridUsingFloatThreeColumn"		: "uiSnippet/gridUsingFloat/markupThreeColumn.tmpl"
+		, "htmlGridUsingFloatFourColumn" 		: "uiSnippet/gridUsingFloat/markupFourColumn.tmpl"
+		, "htmlGridUsingFloatFiveColumn" 		: "uiSnippet/gridUsingFloat/markupFiveColumn.tmpl"
+		, "cssGridUsingFloat" 					: "uiSnippet/gridUsingFloat/style.css"
+		, "notesGridUsingFloat"		 			: "uiSnippet/gridUsingFloat/notes.tmpl"
 		
-		, "htmlTruncateTextWithEllipse" : "uiSnippet/truncateTextWithEllipse/default/truncateTextWithEllipse.tmpl"
-		, "cssTruncateTextWithEllipse" 	: "uiSnippet/truncateTextWithEllipse/default/truncateTextWithEllipse.css"
-		, "notesTruncateTextWithEllipse": "uiSnippet/truncateTextWithEllipse/default/notes.tmpl"
+		// Truncate Text With Ellipse
+		, "cssTruncateTextWithEllipse" 			: "uiSnippet/truncateTextWithEllipse/style.css"
+		, "notesTruncateTextWithEllipse"		: "uiSnippet/truncateTextWithEllipse/notes.tmpl"
 
-		, "htmlTabbedNavigation" 		: "uiSnippet/tabbedNavigation/default/tabbedNavigation.tmpl"
-		, "cssTabbedNavigation" 		: "uiSnippet/tabbedNavigation/default/tabbedNavigation.css"
-		, "scriptTabbedNavigation" 		: "uiSnippet/tabbedNavigation/default/tabbedNavigation"
-		, "scriptTabbedNavigationtmpl" 	: "uiSnippet/tabbedNavigation/default/tabbedNavigation.js"
-		, "notesTabbedNavigation"		: "uiSnippet/tabbedNavigation/default/notes.tmpl"
+		// Tabbed Navigation
+		, "htmlTabbedNavigation" 				: "uiSnippet/tabbedNavigation/markup.tmpl"
+		, "cssTabbedNavigation" 				: "uiSnippet/tabbedNavigation/style.css"
+		, "scriptTabbedNavigation" 				: "uiSnippet/tabbedNavigation/behaviour"
+		, "scriptTabbedNavigationtmpl" 			: "uiSnippet/tabbedNavigation/behaviour.js"
+		, "notesTabbedNavigation"				: "uiSnippet/tabbedNavigation/notes.tmpl"
 
 	  }
 	, shim: {

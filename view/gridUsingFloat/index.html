@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Tabbed Navigation - UI Snippet</title>
+		<title>Grid Using Float - UI Snippet</title>
 		<!-- css begin -->
 		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
 		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
@@ -27,7 +27,7 @@
 					<section class="snippet">
 					<!-- snippet begin -->
 						<div class="hgroup">
-							<h2 class="title">Tabbed Navigation</h2>
+							<h2 class="title">Grid Using Float</h2>
 						</div>
 						<section class="snippet-section snippet-src-code">
 						<!-- snippet-src-code begin -->
@@ -42,27 +42,39 @@
 								<!-- tabs-container begin -->
 									<ul class="tabs-heading">
 									<!-- tabs-heading begin -->
-										<li><a href="#tabbedMarkup">Markup</a></li>
+										<li><a href="#tabbedMarkup1">Markup ( Two Column )</a></li>
+										<li><a href="#tabbedMarkup2">Markup ( Three Column )</a></li>
+										<li><a href="#tabbedMarkup3">Markup ( Four Column )</a></li>
+										<li><a href="#tabbedMarkup4">Markup ( Five Column )</a></li>
 										<li><a href="#tabbedStyle">Style</a></li>
-										<li><a href="#tabbedBehaviour">Behaviour</a></li>
 										<li><a href="#tabbedNotes">Notes</a></li>
 									<!-- tabs-heading end -->
 									</ul>
 									<div class="tabs-content">
 									<!-- tabs-content begin -->
-										<div id="tabbedMarkup">
-											<h3 class="sub-title">Markup</h3>
-											<pre class="prettyprint linenums insMarkup">
+										<div id="tabbedMarkup1">
+											<h3 class="sub-title">Markup ( Two Column )</h3>
+											<pre class="prettyprint linenums insMarkup1">
+											</pre>
+										</div>
+										<div id="tabbedMarkup2">
+											<h3 class="sub-title">Markup ( Three Column )</h3>
+											<pre class="prettyprint linenums insMarkup2">
+											</pre>
+										</div>
+										<div id="tabbedMarkup3">
+											<h3 class="sub-title">Markup ( Four Column )</h3>
+											<pre class="prettyprint linenums insMarkup3">
+											</pre>
+										</div>
+										<div id="tabbedMarkup4">
+											<h3 class="sub-title">Markup ( Five Column )</h3>
+											<pre class="prettyprint linenums insMarkup4">
 											</pre>
 										</div>
 										<div id="tabbedStyle">
 											<h3 class="sub-title">Style</h3>
 											<pre class="prettyprint linenums insStyle">
-											</pre>
-										</div>
-										<div id="tabbedBehaviour">
-											<h3 class="sub-title">Behaviour</h3>
-											<pre class="prettyprint linenums insBehaviour">
 											</pre>
 										</div>
 										<div id="tabbedNotes">
@@ -92,16 +104,44 @@
 								<!-- tabs-container begin -->
 									<ul class="tabs-heading">
 									<!-- tabs-heading begin -->
-										<li><a href="#tabbedDemo1">Tabbed navigation</a></li>
+										<li><a href="#tabbedDemo1">Two Column Grid</a></li>
+										<li><a href="#tabbedDemo2">Three Column Grid</a></li>
+										<li><a href="#tabbedDemo3">Four Column Grid</a></li>
+										<li><a href="#tabbedDemo4">Five Column Grid</a></li>
+										<li><a href="#tabbedDemo5">Nested Grid</a></li>
 									<!-- tabs-heading end -->
 									</ul>
 									<div class="tabs-content">
 									<!-- tabs-content begin -->
 										<div id="tabbedDemo1">
 											<h3 class="sub-title">
-												Tabbed navigation  <a href="demo/tabs.html" target="_blank" class="demo-new-window">view in new window</a>
+												Two Column Grid <a href="demo/twoColumnGrid.html" target="_blank" class="demo-new-window">view in new window</a>
 											</h3>
-											<iframe src="demo/tabs.html" class="demo-view" scrolling="no"></iframe>	
+											<iframe src="demo/twoColumnGrid.html" class="demo-view" scrolling="no"></iframe>	
+										</div>
+										<div id="tabbedDemo2">
+											<h3 class="sub-title">
+												Three Column Grid <a href="demo/threeColumnGrid.html" target="_blank" class="demo-new-window">view in new window</a>
+											</h3>
+											<iframe src="demo/threeColumnGrid.html" class="demo-view" scrolling="no"></iframe>	
+										</div>
+										<div id="tabbedDemo3">
+											<h3 class="sub-title">
+												Four Column Grid <a href="demo/fourColumnGrid.html" target="_blank" class="demo-new-window">view in new window</a>
+											</h3>
+											<iframe src="demo/fourColumnGrid.html" class="demo-view" scrolling="no"></iframe>	
+										</div>
+										<div id="tabbedDemo4">
+											<h3 class="sub-title">
+												Five Column Grid <a href="demo/fiveColumnGrid.html" target="_blank" class="demo-new-window">view in new window</a>
+											</h3>
+											<iframe src="demo/fiveColumnGrid.html" class="demo-view" scrolling="no"></iframe>	
+										</div>
+										<div id="tabbedDemo5">
+											<h3 class="sub-title">
+												Nested Grid <a href="demo/nestedGrid.html" target="_blank" class="demo-new-window">view in new window</a>
+											</h3>
+											<iframe src="demo/nestedGrid.html" class="demo-view" scrolling="no"></iframe>	
 										</div>
 									<!-- tabs-content end -->
 									</div>
@@ -116,7 +156,7 @@
 					</section>
 				<!-- page-content end -->
 				</div>
-				<!-- wrapper end -->
+			<!-- wrapper end -->
 			</div>
 
 		<!-- doc-wrap end -->
@@ -134,15 +174,17 @@
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "init" ], function( app ) {
 					app.preInit();
-					require( [ "jquery", "text!htmlTabbedNavigation", "text!cssTabbedNavigation", "text!scriptTabbedNavigationtmpl", "text!notesTabbedNavigation" ], function( $, markup, style, behaviour, notes ) {
-						$(".insMarkup").html( app.encodeHtml( markup ) );
+					require( [ "jquery", "text!htmlGridUsingFloatTwoColumn", "text!htmlGridUsingFloatThreeColumn", "text!htmlGridUsingFloatFourColumn", "text!htmlGridUsingFloatFiveColumn", "text!cssGridUsingFloat", "text!notesGridUsingFloat" ], function( $, markupTwoColumn, markupThreeColumn, markupFourColumn, markupFiveColumn, style, behaviour ) {
+						$(".insMarkup1").html( app.encodeHtml( markupTwoColumn ) );
+						$(".insMarkup2").html( app.encodeHtml( markupThreeColumn ) );
+						$(".insMarkup3").html( app.encodeHtml( markupFourColumn ) );
+						$(".insMarkup4").html( app.encodeHtml( markupFiveColumn ) );
 						$(".insStyle").html( style );
-						$(".insBehaviour").html( behaviour );
-						$(".insNotes").html( notes );
+						$(".insNotes").html( behaviour );
 						app.postInit();
 					} );
 				} );				
-			} );
+			})
 		</script>
 		<!-- script end -->
 

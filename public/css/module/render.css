@@ -30,6 +30,7 @@ body {
 	color: #333333;
 	border-bottom: 10px solid #428bca;
 	height: 100%;
+	position: relative;
 	-webkit-transition: opacity .3s;
 	-moz-transition: opacity .3s;
     transition: opacity .3s;
@@ -40,12 +41,13 @@ body {
 	-moz-transition: opacity .6s;
     transition: opacity .6s;
 }
-.show {
-	display: block !important;
-}
 .doc-wrap:after {
 	content: "";
+	position: absolute;
 	display: block;
+	width: 100%;
+	bottom: 0;
+	left: 0;
 	box-shadow: -1px -1px 3px #333333;
 	height: 2px;
 }
@@ -69,8 +71,7 @@ body {
 	list-style: none;
 }
 .doc-wrap a,
-.doc-wrap a:link,
-.doc-wrap a:visited {
+.doc-wrap a:link {
 	color: #428bca;
 	text-decoration: none;
 	-webkit-transition: all .6s;
@@ -83,8 +84,22 @@ body {
 	-moz-transition: all .6s;
     transition: all .6s;
 }
-.doc-wrap a:focus {
-	outline: 1px solid #111;
+.doc-wrap [tabindex] {
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+    transition: all .6s;	
+}
+.doc-wrap a:focus,
+.doc-wrap [tabindex]:focus {
+	outline: 2px solid #333333;
+	position: relative;
+	z-index: 100;
+}
+.doc-wrap .show {
+	display: block;
+}
+.doc-wrap .hide {
+	display: none;
 }
 .doc-wrap .enfold {
 	padding: 0 10px;
@@ -97,6 +112,11 @@ body {
 }
 .doc-wrap ol.linenums {
 	margin: 0 0 0 40px;
+}
+.doc-wrap .visual-hide {
+	position: absolute;
+	left: -999em;
+	top: -999em;
 }
 /**
  * doc-wrap end ( reset / generic )
@@ -164,6 +184,134 @@ body {
  */
 
 /**
+ * tabs-container begin ( component )
+ */
+.tabs-container {
+    border: 1px solid #cccccc;
+    width: 100%;
+    min-height: 100px;
+    background: #efefef;
+    margin: 0;
+    position: relative;
+    background: rgb(239,239,239); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(239,239,239,1) 0%, rgba(239,239,239,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(239,239,239,1)), color-stop(24%,rgba(239,239,239,1)), color-stop(25%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(239,239,239,1) 0%,rgba(239,239,239,1) 24%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(239,239,239,1) 0%,rgba(239,239,239,1) 24%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(239,239,239,1) 0%,rgba(239,239,239,1) 24%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(239,239,239,1) 0%,rgba(239,239,239,1) 24%,rgba(255,255,255,1) 25%,rgba(255,255,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+}
+.tabs-container .clrflt {
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+}
+.tabs-container:before {
+	content: "";
+	display: block;
+	height: 100%;
+	border-right: 1px solid #cccccc;
+	position: absolute;
+	top: 0;
+	left: 24.91%;
+}
+.tabs-container .tabs-heading {
+	position: relative;
+    float: left;
+    width: 25%;
+}
+.tabs-heading a {
+    display: block;
+    padding: 9px 6px;
+    background: #efefef;
+    border-bottom: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+}
+.tabs-heading .active-tab {
+    background: #ffffff;
+    border-right: none;
+}
+.tabs-container .tabs-content {
+    margin-left: 25%;
+    padding: 0 9px 9px 9px;
+    background: #ffffff;
+}
+.tabs-content > div {
+	display: none;
+	background: #ffffff;
+}
+.tabs-content .active-tab {
+	display: block;    
+}
+.tabs-content .title {
+    background: #ffffff;
+    color: #333333;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #cccccc;
+}
+@media screen and ( max-width: 759px ) {
+	.tabs-container {
+		background: none;
+	}
+	.tabs-container:before {
+		display: none;
+	}
+	.tabs-container .tabs-heading {
+		width: 100%;
+		float: none;
+		margin: 0;
+		background: #efefef;
+	}
+	.tabs-heading:after {
+		content: "";
+		display: block;
+		clear: both;
+		height: 0;
+		line-height: 0;
+	}
+	.tabs-heading li {
+		float: left;
+		width: 25%;
+	}
+	.tabs-heading a {
+		text-align: center;
+	}
+	.tabs-heading .active-tab {
+		border-right: 1px solid #cccccc;
+		border-bottom: 1px solid #ffffff;
+	}
+	.tabs-container .tabs-content {
+		margin: 1px 0 0 0;
+		padding: 0;
+	}
+	.tabs-content > div {
+		padding: 6px;
+	}
+}
+/**
+ * tabs-container end ( component )
+ */
+
+/**
+ * page-content begin ( layout )
+ */
+.toggle-title {
+}
+.toggle-content.disp {
+	display: block;
+}
+.toggle-content.no-disp {
+	display: none;
+}
+/**
+ * page-content end ( layout )
+ */
+
+/**
  * loader begin ( component )
  */
 .loader {
@@ -178,6 +326,12 @@ body {
 	-moz-transition: height .6s;
     transition: height .6s;
 }
+.loader.hide {
+	top: -100%;
+	-webkit-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+    transition: all 0.6s;
+}
 .loader .msg {
 	width: 100%;
 	position: absolute;
@@ -187,12 +341,6 @@ body {
 	left: 0;
 	text-align: center;
 	color: #000000;
-	-webkit-transition: all 0.6s;
-	-moz-transition: all 0.6s;
-    transition: all 0.6s;
-}
-.loader.hide {
-	top: -100%;
 	-webkit-transition: all 0.6s;
 	-moz-transition: all 0.6s;
     transition: all 0.6s;
@@ -262,12 +410,6 @@ body {
 	text-overflow: initial;
 	overflow: auto;
 }
-.home .home,
-.gridUsingFloat .gridUsingFloat,
-.truncateTextWithEllipse .truncateTextWithEllipse,
-.tabbedNavigation .tabbedNavigation {
-	background: #efefef;
-}
 /**
  * page-navigation end ( layout )
  */
@@ -278,40 +420,125 @@ body {
 .page-content {
 	margin: 1px 0 0 20%;
 	padding: 10px 10px 0 10px;
-	min-height: 320px;
-}
-.page-content > .title {
-	border-bottom: 1px solid #cccccc;
-	margin: -5px 0 10px 0;
+	/*min-height: 320px;*/
 }
 /**
  * page-content end ( layout )
  */
 
 /**
+ * grid begin ( component )
+ */
+[class*="grid-"],
+[class*="grid-"] .row
+[class*="grid-"] [class*="grid-"] {
+	box-sizing: border-box;
+}
+[class*="grid-"],
+[class*="grid-"] .row {
+	width: 100%;
+	padding: 0 0 6px 0;
+}
+[class*="grid-"] [class*="grid-"] .row,
+[class*="grid-"] .row:last-of-type {
+	padding: 0;
+}
+[class*="grid-"] .row:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
+}
+[class*="grid-"] [class*="col-"] {
+	float: left;
+	padding: 6px;
+}
+[class*="grid-"] [class*="grid-"] [class*="col-"] {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.grid-a [class*="col-"] {
+	width: 50%;
+}
+.grid-b [class*="col-"] {
+	width: 33.3%;
+}
+.grid-c [class*="col-"] {
+	width: 25%;
+}
+.grid-d [class*="col-"] {
+	width: 20%;
+}
+/**
+ * grid end ( component )
+ */
+ 
+/**
  * snippet begin ( layout )
  */
-.snippet > .title {
-	font-size: 1.71em;
+.snippet .hgroup {
+	border-bottom: 1px solid #cccccc;
+	margin: -5px 0 10px 0;
 }
-.snippet > .title:before {
-	content: "#";
+.snippet .hgroup .title {
+	margin: 0;
 }
-.snippet .tabs-content {
-	min-height: 500px;
-	overflow: auto;
+.snippet .hgroup .sub-title {
+	margin: 0;
+	padding: 3px 0 3px 3px;
+	font-size: 1.5em;
+	background: #ffffff;
+	color: #333333;
 }
-.snippet .sub-title {
+.snippet p {
+	margin-left: 3px;
+}
+.snippet .snippet-section {
+	border-bottom: 1px solid #cccccc;
+	margin: 0 0 10px 0;
+}
+.snippet .snippet-section .title {
+	display: block;
 	margin: 0;
 	padding: 3px 0 3px 12px;
 	font-size: 1.5em;
-	background: #6f5499;
+	background: #428bca;
 	color: #eeeeee;
+	cursor: pointer;	
 }
-.snippet .prettyprint {
+.snippet .snippet-section .sub-title {
+	background: #ffffff;
+	color: #333333;
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #cccccc;
+	font-size: 1.88em;
+}
+.snippet .snippet-section .demo-new-window {
+	font-size: .5em;
+}
+.snippet .snippet-section .demo-view {
+	border: none;
+	width: 100%;
+	height: 500px;
+	overflow: auto;
+}
+.snippet .snippet-section .tabs-content {
+	min-height: 500px;
+	overflow: auto;
+}
+.snippet .snippet-section .tabs-content > div {
+	height: 100%;
+}
+.snippet .snippet-section .prettyprint {
 	margin: 0;
 	max-height: 450px;
+}
+.snippet .snippet-src-code .toggle-content {
+	display: none;
 }
 /**
  * snippet end ( layout )
  */
+
+

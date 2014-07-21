@@ -2,7 +2,7 @@
  * truncate text ( component )
  */
 .truncate {
-  width: 80%;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

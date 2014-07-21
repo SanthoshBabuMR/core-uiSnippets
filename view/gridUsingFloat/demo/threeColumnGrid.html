@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grid Using Float - Demo</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/css/module/demo.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/gridUsingFloat/style.css" />
+		<style>
+		.demo-container .tuts-list {
+			border-top: 1px solid #cccccc;
+			border-bottom: 1px solid #cccccc;
+		}
+		.demo-container .topic {
+			min-height: 150px;
+			padding: 0 10px;
+			color: #ffffff;
+			border-right: 1px solid #cccccc;
+			box-shadow: 0px 1px 1px 0px #333333;
+		}
+		.demo-container .topic1 {
+			background: #DF4469;
+		}
+		.demo-container .topic2 {
+			background: #7777D1;
+		}
+		.demo-container .topic3 {
+			background: #AFC94B;
+			border-right: none;
+		}
+		.demo-container .grid-b .row {
+			padding: 5px 0 6px 0;
+		}
+		.demo-container [class*="col-"] {
+			padding: 0;
+		}
+		.demo-container p {
+			margin: 0;
+		}
+		</style>
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+		<!-- doc-wrap begin -->
+			<div class="demo-container">
+			<!-- demo-container begin -->
+				<h1>Tuts List</h1>
+				<div class="grid-b tuts-list">
+				<!-- grid-b begin -->
+					<div class="row">
+					<!-- row begin -->
+						<div class="col-a">
+							<div class="topic topic1">
+								<h2>HTML</h2>
+								<p>Learn how to structure web apps</p>
+							</div>
+						</div>
+						<div class="col-b">
+							<div class="topic topic2">
+								<h2>CSS</h2>
+								<p>Learn how to creatively style web apps</p>
+							</div>
+						</div>
+						<div class="col-c">
+							<div class="topic topic3">
+								<h2>JavaScript</h2>
+								<p>Learn how to create interactive and engaging web apps</p>
+							</div>
+						</div>
+					<!-- row end -->
+					</div>
+				<!-- grid-b end -->
+				</div>
+			<!-- demo-container end -->
+			</div>
+		<!-- doc-wrap end -->
+		</div>
+
+	</body>
+</html>

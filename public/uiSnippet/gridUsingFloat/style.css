@@ -6,7 +6,10 @@
 [class*="grid-"] [class*="grid-"] {
 	box-sizing: border-box;
 }
-[class*="grid-"],
+[class*="grid-"] {
+	width: 100%;
+	margin: 0 0 6px 0;
+}
 [class*="grid-"] .row {
 	width: 100%;
 	padding: 0 0 6px 0;
@@ -22,6 +25,9 @@
 	height: 0;
 	line-height: 0;
 }
+[class*="grid-"] [class*="grid-"] {
+	margin: 0; 
+}
 [class*="grid-"] [class*="col-"] {
 	float: left;
 	padding: 6px;
@@ -30,17 +36,25 @@
 	padding-top: 0;
 	padding-bottom: 0;
 }
-.grid-a [class*="col-"] {
+.grid-a [class*="col-"],
+[class*="grid-"] .grid-a [class*="col-"] {
 	width: 50%;
 }
-.grid-b [class*="col-"] {
+.grid-b [class*="col-"],
+[class*="grid-"] .grid-b [class*="col-"]  {
 	width: 33.3%;
 }
-.grid-c [class*="col-"] {
+.grid-c [class*="col-"],
+[class*="grid-"] .grid-c [class*="col-"]  {
 	width: 25%;
 }
-.grid-d [class*="col-"] {
+.grid-d [class*="col-"],
+[class*="grid-"] .grid-d [class*="col-"]  {
 	width: 20%;
+}
+[class*="grid-"] .col-z {
+	float: none;
+	width: 100%;
 }
 /**
  * grid end ( component )

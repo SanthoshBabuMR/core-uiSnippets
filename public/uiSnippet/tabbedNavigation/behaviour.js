@@ -1,21 +1,12 @@
 define( [ "jquery" ], function( $ ) {
 
-	var elTabs = ".tabs-container"
-		, elTabsHeading = ".tabs-heading"
-		, elTabsContent = ".tabs-content"
-		, elTabsActive = ".active-tab";
-
-	var removeClassPrefix = function ( clsName ) {
-		return clsName.toString().replace(/^\./,"");
-	}
-
 	/**
 	 * enable tabbed navigation
 	 * @function tabs
 	 * @return {undefined}
 	 */
 	function tabs() {
-		var tabsContainer = $( elTabs );
+		var tabsContainer = $( ".tabs-container" );
 		var active;
 		// tabbed navigation click, keypress handler
 		tabsContainer.off().on( "click keypress", function( e ) {
@@ -26,9 +17,9 @@ define( [ "jquery" ], function( $ ) {
 		  var target = $(e.target);
 		  var tabsContent = $( target.attr( "href" ) );
 		  if( tabsContent.length === 1 ) {
-		    tabs.find( elTabsActive ).removeClass( removeClassPrefix( elTabsActive ) ) ;
-		    target.addClass( removeClassPrefix( elTabsActive ) );
-		    tabsContent.addClass( removeClassPrefix( elTabsActive ) );
+		    tabs.find( ".active-tab" ).removeClass( "active-tab" ) ;
+		    target.addClass( "active-tab" );
+		    tabsContent.addClass( "active-tab" );
 		    return false;
 		  } 
 		  return true;
@@ -36,14 +27,14 @@ define( [ "jquery" ], function( $ ) {
 
 		$(tabsContainer).each ( function( index ) {
 			var self = $( this );	
-			active = self.find( elTabsActive );
+			active = self.find( ".active-tab" );
 			if( active.length >= 1 ) {
 				if( active[0].tagName === "A" ) {
-					$( active[0] ).trigger("click");
+					$( active[0] ).trigger( "click" );
 				}
 			}
 			else {
-				$( $( self.find( elTabsHeading ) ).find("a")[0] ).addClass( elTabsActive ).trigger("click");
+				$( $( self.find( ".tabs-heading" ) ).find("a")[0] ).addClass( ".active-tab" ).trigger( "click" );
 			}
 		} );
 	}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grid Using Float - Demo</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/css/module/demo.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/gridUsingFloat/style.css" />
+
+		<style>
+			.demo-wrap p {
+				margin: 0;
+			}
+			.grid-b .grid-a .col-a,
+			.grid-b .grid-a .col-b {
+				border: none;
+			}
+			.grid-b .col-a,
+			.grid-b .col-b,
+			.grid-b .col-c {
+				border-bottom: 1px solid #a0a0a0;
+			}
+		</style>
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+		<!-- doc-wrap begin -->
+			<div class="demo-container">
+				<div class="grid-b">
+				<!-- grid-b begin -->
+					<div class="row">
+					<!-- row begin -->
+						<div class="col-a">
+							<p>Row 1 Col 1</p>
+						</div>
+						<div class="col-b">
+							<p>Row 1 Col 2</p>
+						</div>
+						<div class="col-c">
+							<p>Row 1 Col 3</p>
+						</div>
+					<!-- row end -->
+					</div>
+					<div class="row">
+					<!-- row begin -->
+						<div class="col-a">
+							<p>Row 2 Col 1</p>
+						</div>
+						<div class="col-b">
+							<div class="grid-a">
+							<!-- grid-a begin -->
+								<div class="row">
+								<!-- row begin -->
+									<div class="col-a">
+										<p>nested grid cell</p>
+									</div>
+									<div class="col-b">
+										<p>nested grid cell</p>
+									</div>
+								<!-- row end -->
+								</div>
+							<!-- grid-a end -->
+							</div>
+						</div>
+						<div class="col-c">
+							<p>Row 2 Col 3</p>
+						</div>
+					<!-- row end -->
+					</div>
+					<div class="row">
+					<!-- row begin -->
+						<div class="col-a">
+							<p>Row 3 Col 1</p>
+						</div>
+						<div class="col-b">
+							<p>Row 3 Col 2</p>
+						</div>
+						<div class="col-c">
+							<p>Row 3 Col 3</p>
+						</div>
+					<!-- row end -->
+					</div>
+				<!-- grid-b end -->
+				</div>
+			</div>
+		<!-- doc-wrap end -->
+		</div>
+
+	</body>
+</html>

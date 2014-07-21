@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tabs - Demo</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/tabbedNavigation/style.css" />
+		
+		<style>
+		.demo-container {
+			width: 98%;
+		}
+		</style>
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+		<!-- doc-wrap begin -->
+			<div class="demo-container">
+			<!-- demo-container begin -->
+				<div class="tabs-container">
+				<!-- tabs-container begin -->
+					<ul class="tabs-heading">
+					<!-- tabs-heading begin -->
+						<li><a href="#tabbed1">Tesla</a></li>
+						<li><a href="#tabbed2">Audi</a></li>
+						<li><a href="#tabbed3">BMW</a></li>
+					<!-- tabs-heading end -->
+					</ul>
+					<div class="tabs-content">
+					<!-- tabs-content begin -->
+						<div id="tabbed1">
+							<h3 class="sub-title">Tesla</h3>
+							<p>
+								TESLA MOTORS was founded in 2003 by a group of Silicon Valley engineers who set out to prove that electric vehicles could be awesome.
+							</p>
+							<p>
+								THE TESLA ROADSTER hit the streets in early 2008 as a sports car that can go from 0 to 60 mph in 3.7 seconds and travel for 245 miles per charge.
+							</p>
+							<p>
+								SUPERCHARGERS let Model S and Model X owners charge for free at strategic locations, enabling long distance road trips in North America, Europe, and Asia.
+							</p>		
+							<p>
+								TESLA'S BATTERIES AND POWERTRAINS will help lessen global dependence on petroleum-based transportation and drive down the cost of electric vehicles. By cooperating with other car manufacturers, we hope to put more electric cars on the road. 
+							</p>
+						</div>
+						<div id="tabbed2">
+							<h3 class="sub-title">Audi</h3>
+							<p>
+								As a manufacturer of high-quality and  innovative luxury cars, Audi is one of the world’s leading premium brands and is among the most admired on the world market. The basis of its success comprises pioneering concepts in the domains of advanced technology and design.
+							</p>
+							<p>
+								Audi is represented in 110 countries  worldwide and since 2004, Audi has been selling its products on the Indian market.
+							</p>
+							<p>
+								In March 2007, Audi set up its own sales company for India. By establishing Audi India as a Division of Volkswagen Group Sales India Pvt. Ltd. in Mumbai, Audi is making a clear long-term statement in the country with ambitious growths plans. Audi’s goal is to become the leading automobile luxury brand in the Indian market in the next few years.
+							</p>
+							<p>
+								The Audi India strategy encompasses significant investments in branding, marketing, exclusive dealerships and after sales service for the upcoming years.
+							</p>
+							<p>
+								At present Audi is assembling the Audi A6, Audi A4, Audi Q3, Audi Q5 and Audi Q7 for the Indian market in Aurangabad.
+							</p>
+						</div>
+						<div id="tabbed3">
+							<h3 class="sub-title">BMW</h3>
+							<p>
+								Founded in 1917, the BMW Group is now one of the ten largest car manufacturers in the world and, with its BMW, MINI and Rolls-Royce brands, possesses three of the strongest premium brands in the car industry. The group also has a strong market position in the motorcycle sector and operates a successful financial services business. 
+							</p>
+							<p>
+								The company aims to generate profitable growth and above-average returns by focusing on the premium segments of the international automobile markets. With this in mind, a wide-ranging product and market offensive was initiated in 2001, which has resulted in the BMW Group expanding its product range considerably and strengthening its worldwide market position. The company’s brand is extremely strong and is associated with high performance, engineering excellence and innovation. Indeed, the BMW brand is often cited as one of the ‘best’ in the world, and the company continues to launch a stream of innovative products as part of its battle with German peer Mercedes to be the world’s largest luxury car maker.
+							</p>
+						</div>
+					<!-- tabs-content end -->
+					</div>
+					<div class="clrflt"></div>
+				<!-- tabs-container end -->
+				</div>
+			<!-- demo-container end -->
+			</div>
+		<!-- doc-wrap end -->
+		</div>
+			
+		<!-- script begin -->
+		<script src="/public/script/lib/requirejs/require.js"></script>
+		<script>
+			require( ["/public/script/config/pathConfig.js"], function( ) {
+				require( [ "jquery", "scriptTabbedNavigation" ], function( $, tabNav ) {
+					tabNav.tabs();
+				} );
+			} );
+		</script>
+		<!-- script end -->
+
+	</body>
+</html>

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>UI Snippet</title>
+		<title>Template - UI Snippet</title>
 		<!-- css begin -->
 		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
 		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
@@ -12,45 +12,34 @@
 	</head>
 	<body>
 
-		<div class="doc-wrap">
+		<div class="doc-wrap gridUsingFloat">
 		<!-- doc-wrap begin -->
+			
 			<header class="page-header">
-			<!-- page-header template goes here -->
+			<!-- page-header begin -->
+
+			<!-- page-header end -->
 			</header>
+
 			<div class="wrapper">
 			<!-- wrapper begin -->
-				<nav class="page-navigation">
-				<!-- page-navigation template goes here -->
-				</nav>
-				<div class="page-content">
-				<!-- page-content begin -->
-					<h1 class="title">Home</h1>
-					<p>
-						Explore the snippet(s) by clicking on the respective links.
-					</p>
-				<!-- page-content end -->
-				</div>
+				
 			<!-- wrapper end -->
 			</div>
+
 		<!-- doc-wrap end -->
 		</div>
-
-		<div class="loader">
-			<div class="msg">
-				<span>loading ...</span>
-			</div>
-		</div>
-
+		
 		<!-- script begin -->
 		<script src="/public/script/lib/requirejs/require.js"></script>
 		<script>
 			require( ["/public/script/config/pathConfig.js"], function( ) {
-				require( [ "init" ], function( app ) {
-					app.preInit().postInit();
+				require( [ "scriptSample" ], function( sampleApp ) {
+					// DO STUFF HERE
 				} );				
 			})
 		</script>
-
 		<!-- script end -->
+
 	</body>
 </html>

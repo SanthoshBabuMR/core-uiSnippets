@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Tabbed Navigation - UI Snippet</title>
+		<title>Title - UI Snippet</title>
 		<!-- css begin -->
 		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
 		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
@@ -27,8 +27,12 @@
 					<section class="snippet">
 					<!-- snippet begin -->
 						<div class="hgroup">
-							<h2 class="title">Tabbed Navigation</h2>
+							<h2 class="title">Title</h2>
+							<h3 class="sub-title">Sub Title</h3>
 						</div>
+						<p>
+							Summary
+						</p>
 						<section class="snippet-section snippet-src-code">
 						<!-- snippet-src-code begin -->
 							<div class="toggle-title">
@@ -92,16 +96,16 @@
 								<!-- tabs-container begin -->
 									<ul class="tabs-heading">
 									<!-- tabs-heading begin -->
-										<li><a href="#tabbedDemo1">Tabbed navigation</a></li>
+										<li><a href="#tabbedDemo1">Slider</a></li>
 									<!-- tabs-heading end -->
 									</ul>
 									<div class="tabs-content">
 									<!-- tabs-content begin -->
 										<div id="tabbedDemo1">
 											<h3 class="sub-title">
-												Tabbed navigation  <a href="demo/tabs.html" target="_blank" class="demo-new-window">view in new window</a>
+												Slider  <a href="demo/slider.html" target="_blank" class="demo-new-window">view in new window</a>
 											</h3>
-											<iframe src="demo/tabs.html" class="demo-view" scrolling="no"></iframe>	
+											<iframe src="demo/slider.html" class="demo-view" scrolling="no"></iframe>	
 										</div>
 									<!-- tabs-content end -->
 									</div>
@@ -134,7 +138,7 @@
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "init" ], function( app ) {
 					app.preInit();
-					require( [ "jquery", "text!htmlTabbedNavigation", "text!cssTabbedNavigation", "text!scriptTabbedNavigationtmpl", "text!notesTabbedNavigation" ], function( $, markup, style, behaviour, notes ) {
+					require( [ "jquery", "text!htmlFile", "text!cssFile", "text!scriptFile", "text!notesFile" ], function( $, markup, style, behaviour, notes ) {
 						$(".insMarkup").html( app.encodeHtml( markup ) );
 						$(".insStyle").html( style );
 						$(".insBehaviour").html( behaviour );
