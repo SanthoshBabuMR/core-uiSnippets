@@ -22,7 +22,7 @@
 		<!-- doc-wrap begin -->
 			<div class="demo-container">
 			<!-- demo-container begin -->
-				<div class="tabs-container">
+				<div class="tabs-container about-cars">
 				<!-- tabs-container begin -->
 					<ul class="tabs-heading">
 					<!-- tabs-heading begin -->
@@ -46,6 +46,9 @@
 							</p>		
 							<p>
 								TESLA'S BATTERIES AND POWERTRAINS will help lessen global dependence on petroleum-based transportation and drive down the cost of electric vehicles. By cooperating with other car manufacturers, we hope to put more electric cars on the road. 
+							</p>
+							<p>
+								Ref: <a href="http://www.teslamotors.com/about">About Tesla</a> 
 							</p>
 						</div>
 						<div id="tabbed2">
@@ -90,7 +93,11 @@
 		<script>
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "jquery", "scriptTabbedNavigation" ], function( $, tabNav ) {
-					tabNav.tabs();
+					console.log( tabNav )
+					var a =tabNav.init(
+						{
+							elTabsContainer: $(".about-cars")
+						}).tabs();
 				} );
 			} );
 		</script>
