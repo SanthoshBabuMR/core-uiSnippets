@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SlideBox - UI Snippet</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/css/module/render.css" />
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="doc-wrap">
+		<!-- doc-wrap begin -->
+			<header class="page-header">
+			<!-- page-header template goes here -->
+			</header>
+			<div class="wrapper">
+			<!-- wrapper begin -->
+				<nav class="page-navigation">
+				<!-- page-navigation template goes here -->
+				</nav>
+				<div class="page-content">
+				<!-- page-content begin -->
+					<section class="snippet">
+					<!-- snippet begin -->
+						<div class="hgroup">
+							<h2 class="title">SlideBox</h2>
+						</div>
+						<section class="snippet-section snippet-src-code">
+						<!-- snippet-src-code begin -->
+							<div class="toggle-title">
+							<!-- toggle-title begin -->
+								<h2 class="title" tabindex="0">Source Code</h2>
+							<!-- toggle-title end -->
+							</div>		
+							<div class="toggle-content">
+							<!-- toggle-content begin -->					
+								<div class="tabs-container">
+								<!-- tabs-container begin -->
+									<ul class="tabs-heading">
+									<!-- tabs-heading begin -->
+										<li><a href="#tabbedMarkup">Markup</a></li>
+										<li><a href="#tabbedStyle">Style</a></li>
+										<li><a href="#tabbedBehaviour">Behaviour</a></li>
+										<li><a href="#tabbedNotes">Notes</a></li>
+									<!-- tabs-heading end -->
+									</ul>
+									<div class="tabs-content">
+									<!-- tabs-content begin -->
+										<div id="tabbedMarkup">
+											<h3 class="sub-title">Markup</h3>
+											<pre class="prettyprint linenums insMarkup">
+											</pre>
+										</div>
+										<div id="tabbedStyle">
+											<h3 class="sub-title">Style</h3>
+											<pre class="prettyprint linenums insStyle">
+											</pre>
+										</div>
+										<div id="tabbedBehaviour">
+											<h3 class="sub-title">Behaviour</h3>
+											<pre class="prettyprint linenums insBehaviour">
+											</pre>
+										</div>
+										<div id="tabbedNotes">
+											<h3 class="sub-title">Notes</h3>
+											<div class="insNotes">
+											</div>									
+										</div>
+									<!-- tabs-content end -->
+									</div>
+									<div class="clrflt"></div>
+								<!-- tabs-container end -->
+								</div>
+							<!-- toggle-content end -->
+							</div>
+						<!-- snippet-src-code end -->
+						</section>
+						<section class="snippet-section snippet-demo">
+						<!-- snippet-demo begin -->
+							<div class="toggle-title">
+							<!-- toggle-title begin -->
+								<h2 class="title" tabindex="0">Demo</h2>
+							<!-- toggle-title end -->
+							</div>
+							<div class="toggle-content">
+							<!-- toggle-content begin -->
+								<div class="tabs-container">
+								<!-- tabs-container begin -->
+									<ul class="tabs-heading">
+									<!-- tabs-heading begin -->
+										<li><a href="#tabbedDemo1">Slide Box</a></li>
+									<!-- tabs-heading end -->
+									</ul>
+									<div class="tabs-content">
+									<!-- tabs-content begin -->
+										<div id="tabbedDemo1">
+											<h3 class="sub-title">
+												Slide Box  <a href="demo/slideBox.html" target="_blank" class="demo-new-window">view in new window</a>
+											</h3>
+											<iframe src="demo/slideBox.html" class="demo-view" scrolling="no"></iframe>	
+										</div>
+									<!-- tabs-content end -->
+									</div>
+									<div class="clrflt"></div>
+								<!-- tabs-container end -->
+								</div>
+							<!-- toggle-content end -->
+							</div>
+						<!-- snippet-demo end -->
+						</section>
+					<!-- snippet end -->
+					</section>
+				<!-- page-content end -->
+				</div>
+				<!-- wrapper end -->
+			</div>
+
+		<!-- doc-wrap end -->
+		</div>
+		
+		<div class="loader">
+			<div class="msg">
+				<span>loading ...</span>
+			</div>
+		</div>
+
+		<!-- script begin -->
+		<script src="/public/script/lib/requirejs/require.js"></script>
+		<script>
+			require( ["/public/script/config/pathConfig.js"], function( ) {
+				require( [ "init" ], function( app ) {
+					app.preInit();
+					require( [ "jquery", "text!htmlSlideBox", "text!cssSlideBox", "text!scriptSlideBoxtmpl", "text!notesSlideBox" ], function( $, markup, style, behaviour, notes ) {
+						$(".insMarkup").html( app.encodeHtml( markup ) );
+						$(".insStyle").html( style );
+						$(".insBehaviour").html( behaviour );
+						$(".insNotes").html( notes );
+						app.postInit();
+					} );
+				} );				
+			} );
+		</script>
+		<!-- script end -->
+
+	</body>
+</html>

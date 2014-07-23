@@ -1,6 +1,7 @@
 .slide-box,
 .slide-wrap,
-.slide-container {
+.slide-container,
+.slide-ctrl {
     box-sizing: border-box;
 }
 .slide-box {
@@ -13,11 +14,6 @@
 }
 .slide-wrap {
     padding: 20px;
-}
-.slide-ctrl.a {
-    background: green;
-    left: 3px;
-    width: 10px;
 }
 .slide-container {
     width: 200px;

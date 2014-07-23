@@ -47,6 +47,13 @@ requirejs.config( {
 		, "scriptTabbedNavigationtmpl" 			: "uiSnippet/tabbedNavigation/behaviour.js"
 		, "notesTabbedNavigation"				: "uiSnippet/tabbedNavigation/notes.tmpl"
 
+		// Slide Box
+		, "htmlSlideBox" 						: "uiSnippet/SlideBox/markup.tmpl"
+		, "cssSlideBox" 						: "uiSnippet/SlideBox/style.css"
+		, "scriptSlideBox" 						: "uiSnippet/SlideBox/behaviour"
+		, "scriptSlideBoxtmpl" 					: "uiSnippet/SlideBox/behaviour.js"
+		, "notesSlideBox"						: "uiSnippet/SlideBox/notes.tmpl"
+
 	  }
 	, shim: {
 		

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Slide Box - Demo</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/css/module/demo.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/slideBox/style.css" />
+
+		<style>
+		
+		</style>
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+		<!-- doc-wrap begin -->
+			<div class="demo-container">
+			<!-- demo-container begin -->
+				<div class="slide-box">
+			    <!-- slide-box begin -->
+			    <div class="slide-wrap">
+			    <!-- slide-wrap begin -->
+			        <div class="slide-ctrl" tabindex="0"></div>
+			        <div class="slide-container">
+			        <!-- slide-container begin -->
+			        
+			        <!-- slide-container end -->
+			        </div>
+			    <!-- slide-wrap container -->
+			    </div>
+			    <!-- slide-box end -->
+			</div>
+			<!-- demo-container end -->
+			</div>
+		<!-- doc-wrap end -->
+		</div>
+
+		<!-- script begin -->
+		<script src="/public/script/lib/requirejs/require.js"></script>
+		<script>
+			require( ["/public/script/config/pathConfig.js"], function( ) {
+				require( [ "jquery", "scriptSlideBox" ], function( $, slideBox ) {
+					slideBox.init({
+						callback: function() {
+							if( $( ".slide-box" ).hasClass( "slide" ) ) {
+								$( ".slide-ctrl" ).css( {
+									background: "red"
+								} );
+							}
+							else {
+								$( ".slide-ctrl" ).css( {
+									background: "green"
+								} );
+							}
+						}
+					}).slide();
+				} );
+			} );
+		</script>
+		<!-- script end -->
+
+	</body>
+</html>
