@@ -93,9 +93,7 @@
 		<script>
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "jquery", "scriptTabbedNavigation" ], function( $, tabNav ) {
-					console.log( tabNav )
-					var a =tabNav.init(
-						{
+					tabNav.init({
 							elTabsContainer: $(".about-cars")
 						}).tabs();
 				} );
