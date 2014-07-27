@@ -11,6 +11,10 @@ UI Snippets
 ```bash
 grunt appServer
 ```
+* build application
+```bash
+grunt build
+```
 * lint grunt module(s)
 ```bash
 grunt lintGrunt
@@ -22,4 +26,8 @@ grunt lintApp
 * lint grunt and application module(s)
 ```bash
 grunt lint
+```
+* beautify html, css, js
+```bash
+grunt beautify
 ```
