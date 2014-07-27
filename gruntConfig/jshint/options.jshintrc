@@ -2,7 +2,7 @@
  * configuration option for js hint
  * @file: options.jshintrc
  * @src: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
- * @ref: http://www.jshint.com/docs/
+ * @ref: http://jshint.com/docs/options/
  */
 
 {
@@ -25,7 +25,7 @@
     "noarg"         : true,     // true: Prohibit use of `arguments.caller` and `arguments.callee`
     "noempty"       : true,     // true: Prohibit use of empty blocks
     "nonew"         : false,    // true: Prohibit use of constructors for side-effects (without assignment)
-    "plusplus"      : false,    // true: Prohibit use of `++` & `--`
+    "plusplus"      : true,     // true: Prohibit use of `++` & `--`
     "quotmark"      : "double", // Quotation mark consistency:
                                 //   false    : do nothing (default)
                                 //   true     : ensure whatever is used is consistent
@@ -83,7 +83,10 @@
     "yui"           : false,    // Yahoo User Interface
 
     // Custom Globals
-    "globals"       : {         // additional predefined global variables
+    "globals"       : 
+
+
+    {         // additional predefined global variables
         "define": true,
         "require": true
     }

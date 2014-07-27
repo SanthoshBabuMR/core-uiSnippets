@@ -21,10 +21,10 @@ module.exports = function ( grunt ) {
                 //, reporterOutput: 'buildLog/jshint/error.html'
             },
             gruntModules: [ "Gruntfile.js", "gruntConfig/**/*.js" ],
-            application: [ "public/script/module/**/*.js", "public/uiSnippet/**/*.js" ]
+            application: [ "public/script/**/*.js", "public/uiSnippet/**/*.js", "!public/script/lib/**" ]
         },
         jsbeautifier: {
-            all: [ "Gruntfile.js", "view/**/*", "public/tmpl/**/*", "public/css/**/*", "public/script/**/*", "public/uiSnippet/**/*", ],
+            all: [ "Gruntfile.js", "view/**/*", "wiki/**/*", "public/**/*", "!public/font/**", "!public/script/lib/**" ],
             options: { // @ref: https://github.com/beautify-web/js-beautify#options
                 html: {
                     braceStyle: "collapse", // [collapse|expand|end-expand]
@@ -33,14 +33,14 @@ module.exports = function ( grunt ) {
                     indentSize: 4,
                     maxPreserveNewlines: 10,
                     preserveNewlines: false,
-                    unformatted: [ ], // List of tags (defaults to inline) that should not be reformatted
+                    unformatted: [], // List of tags (defaults to inline) that should not be reformatted
                     wrapLineLength: 0, // (0 disables)
                     fileTypes: [ ".html.tmpl" ]
                 },
                 css: {
                     indentChar: " ",
                     indentSize: 4,
-                    fileTypes: [ ".css.scss,less,sass" ]
+                    fileTypes: [ ".css.scss.less.sass" ]
                 },
                 js: {
                     braceStyle: "collapse", // [collapse|expand|end-expand]
@@ -55,11 +55,12 @@ module.exports = function ( grunt ) {
                     keepArrayIndentation: false,
                     keepFunctionIndentation: false,
                     maxPreserveNewlines: 10,
-                    preserveNewlines: false,
+                    preserveNewlines: true,
                     spaceBeforeConditional: true,
                     spaceInParen: true,
                     unescapeStrings: false,
-                    wrapLineLength: 0 // (0 disables)
+                    wrapLineLength: 0, // (0 disables)
+                    fileTypes: [ ".js" ]
                 }
             }
         }
