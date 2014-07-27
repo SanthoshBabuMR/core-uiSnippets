@@ -1,9 +1,9 @@
 define( [ "jquery" ], function( $ ) {
-
+    "use strict";
     // namespace sb
     var sb = {};
 
-    sb.elSlideBox = $(".slide-box")
+    sb.elSlideBox = $(".slide-box");
     sb.duration = 600;
     sb.effect = "linear";
     sb.classSlideEnabled = "active";
@@ -34,7 +34,7 @@ define( [ "jquery" ], function( $ ) {
      * return {object}
      */
     sb.init = function ( config ) {
-        sb.elSlideBox = config.elSlideBox || sb.elSlideBox
+        sb.elSlideBox = config.elSlideBox || sb.elSlideBox;
         sb.effect = config.effect || sb.effect;
         sb.duration = config.duration || sb.duration;
         sb.classSlideEnabled = config.classSlideEnabled || sb.classSlideEnabled;
@@ -43,7 +43,7 @@ define( [ "jquery" ], function( $ ) {
         sb.slideIn = config.slideIn || sb.slideIn;
         sb.callback = config.callback || sb.callback;
         return sb;
-    }
+    };
 
     /**
      * apply slide behaviour to html component, by configuring respective events
@@ -51,7 +51,7 @@ define( [ "jquery" ], function( $ ) {
      * return {object}
      */
     sb.slide = function() {
-        sb.elSlideBox.each( function( index) {
+        sb.elSlideBox.each( function( /*index*/ ) {
             var el = $(this)
                 , elSlideContainer = $( "."+sb.classSlideContainer, el )
                 , elSlideCtrl = $( "."+sb.classCtrls, el );
@@ -93,17 +93,17 @@ define( [ "jquery" ], function( $ ) {
                 el.addClass( sb.classPrep );
                 if ( hasSlided() !== true ) {
                     el.addClass( sb.classSlide );
-                    elSlideContainer.animate( sb.slideOut, sb.duration, sb.effect, sb.callback );
+                    elSlideContainer.animate( sb.slideOut, sb.duration, sb.effect, callback );
                 } else {
                     el.removeClass( sb.classSlide );
-                    elSlideContainer.animate( sb.slideIn, sb.duration, sb.effect, sb.callback );
+                    elSlideContainer.animate( sb.slideIn, sb.duration, sb.effect, callback );
                 }
             }
             // add "classSlideEnabled" class to indicate the component is initialized with slide behaviour
             el.addClass( sb.classSlideEnabled );
             elSlideCtrl.on( "click.slideBox keypress.slideBox", handleSlide );
         } );
-    }
+    };
     
     // expose public properties
     return sb;

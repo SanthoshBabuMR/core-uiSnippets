@@ -1,7 +1,9 @@
 define( [ "jquery" ] , function( $ ) {
 
+	"use strict";
+
 	// utility object
-	var util = {}
+	var util = {};
 
 	/**
 	 * remove the "dot" prefix for css class names
@@ -15,7 +17,7 @@ define( [ "jquery" ] , function( $ ) {
 	 */
 	util.removeClassPrefix = function ( clsName ) {
 		return clsName.toString().replace(/^\./,"");
-	}
+	};
 
 	/**
 	 * encode "<" and ">" to "&lt;" and "&gt;"
@@ -29,7 +31,7 @@ define( [ "jquery" ] , function( $ ) {
 	    } else {
 	        return "";
 	    }
-	}
+	};
 
 	/**
 	 * decode "&lt;" and "&gt;" to "<" and ">"
@@ -43,7 +45,7 @@ define( [ "jquery" ] , function( $ ) {
 	    } else {
 	        return "";
 	    }
-	}
+	};
 
 	// expose the utility object
 	return util;

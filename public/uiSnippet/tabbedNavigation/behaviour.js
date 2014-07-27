@@ -1,5 +1,5 @@
 define( [ "jquery" ], function( $ ) {
-
+    "use strict";
     // @namespace tabNav
     var tabNav = {};
     
@@ -24,7 +24,7 @@ define( [ "jquery" ], function( $ ) {
         tabNav.classTabsContent = config.classTabsContent || tabNav.classTabsContent;
         tabNav.classActiveTab = config.classActiveTab || tabNav.classActiveTab;
         return tabNav;
-    }
+    };
 
     /**
      * enable tabbed navigation
@@ -57,9 +57,9 @@ define( [ "jquery" ], function( $ ) {
         } );
 
         // loop through list of tabbed navigation within the page
-        $(tabNav.elTabsContainer).each ( function( index ) {
-            var self = $( this );    
-            active = self.find( tabNav.classActiveTab );
+        $(tabNav.elTabsContainer).each ( function( /*index*/ ) {
+            var self = $( this )
+                , active = self.find( tabNav.classActiveTab );
             if( active.length >= 1 ) {
                 if( active[0].tagName === "A" ) {
                     // trigger click event on the tab heading link with class referenced by "classActiveTab"
@@ -72,8 +72,8 @@ define( [ "jquery" ], function( $ ) {
             }
         } );
         return tabNav;
-    }
+    };
 
     // expose public properties
     return tabNav;
-} )
+} );

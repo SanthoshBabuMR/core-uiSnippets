@@ -4,8 +4,9 @@
  * @module init
  */
 define( [ "jquery", "util", "text!pageNavigation", "text!pageHeader", "text!wikiHeader", "text!wikiNavigation", "google-code-prettify" ] , function( $, util, pageNavigationTmpl, pageHeaderTmpl, wikiHeaderTmpl, wikiNavigationTmpl, codePrettify ) {
+	"use strict";
 	// application object
-	var app = {}
+	var app = {};
 	// list of DOM elements object in the page
 	app.elPage = ".doc-wrap";
 	app.elWikiPage = ".doc-wrap.wiki";
@@ -78,7 +79,7 @@ define( [ "jquery", "util", "text!pageNavigation", "text!pageHeader", "text!wiki
 		  return true;
 		} );
 
-		$(tabsContainer).each ( function( index ) {
+		$(tabsContainer).each ( function( ) {
 			var self = $( this );	
 			active = self.find( ".active-tab" );
 			if( active.length >= 1 ) {
