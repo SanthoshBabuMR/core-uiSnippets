@@ -52,6 +52,7 @@ require.config( {
         "cssSlideBox": "uiSnippet/SlideBox/style.css",
         "scriptSlideBox": "uiSnippet/SlideBox/behaviour",
         "scriptSlideBoxtmpl": "uiSnippet/SlideBox/behaviour.js",
+        "scriptInitSlideBoxtmpl": "uiSnippet/SlideBox/initialize.js",
         "notesSlideBox": "uiSnippet/SlideBox/notes.tmpl"
     },
     shim: {},

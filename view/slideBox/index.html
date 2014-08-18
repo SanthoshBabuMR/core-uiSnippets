@@ -45,6 +45,7 @@
 										<li><a href="#tabbedMarkup">Markup</a></li>
 										<li><a href="#tabbedStyle">Style</a></li>
 										<li><a href="#tabbedBehaviour">Behaviour</a></li>
+										<li><a href="#tabbedInitialize">Initialize</a></li>
 										<li><a href="#tabbedNotes">Notes</a></li>
 									<!-- tabs-heading end -->
 									</ul>
@@ -63,6 +64,11 @@
 										<div id="tabbedBehaviour">
 											<h3 class="sub-title">Behaviour</h3>
 											<pre class="prettyprint linenums insBehaviour">
+											</pre>
+										</div>
+										<div id="tabbedInitialize">
+											<h3 class="sub-title">Initialize</h3>
+											<pre class="prettyprint linenums insInitialize">
 											</pre>
 										</div>
 										<div id="tabbedNotes">
@@ -134,10 +140,12 @@
 			require( ["/public/script/config/pathConfig.js"], function( ) {
 				require( [ "init" ], function( app ) {
 					app.preInit();
-					require( [ "jquery", "text!htmlSlideBox", "text!cssSlideBox", "text!scriptSlideBoxtmpl", "text!notesSlideBox" ], function( $, markup, style, behaviour, notes ) {
+					require( [ "jquery", "text!htmlSlideBox", "text!cssSlideBox", "text!scriptSlideBoxtmpl", "text!scriptInitSlideBoxtmpl", "text!notesSlideBox" ], function( $, markup, style, behaviour, initialize, notes ) {
 						$(".insMarkup").html( app.encodeHtml( markup ) );
 						$(".insStyle").html( style );
 						$(".insBehaviour").html( behaviour );
+						console.log( initialize)
+						$(".insInitialize").html( initialize );
 						$(".insNotes").html( notes );
 						app.postInit();
 					} );
