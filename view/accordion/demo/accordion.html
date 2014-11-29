@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Accordion - Demo</title>
+		<!-- css begin -->
+		<link rel="stylesheet" href="/public/css/lib/reset/normalize.css" />
+		<link rel="stylesheet" href="/public/css/lib/googlePrettify/sonsOfObsidian.css" />
+		<link rel="stylesheet" href="/public/uiSnippet/accordion/style.css" />
+		
+		<style>
+		.demo-container {
+			width: 98%;
+		}
+		</style>
+		<!-- css end -->
+	</head>
+	<body>
+
+		<div class="demo-wrap">
+		<!-- doc-wrap begin -->
+			<div class="demo-container">
+			<!-- demo-container begin -->
+				<div class="accordion container1">
+				<!-- accordion begin -->
+					<h3>Section 1</h3>
+					<div>
+						<p>
+							Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+						</p>
+					</div>
+					<h3>Section 2</h3>
+					<div>
+						<p>
+							<a href="#">Sed non urna.</a> Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.
+						</p>
+					</div>
+					<h3>Section 3</h3>
+					<div>
+						<p>
+							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+						</p>
+					</div>
+				<!-- accordion end -->
+				</div>
+
+				<div class="accordion container2">
+					<!-- accordion begin -->
+					  <h3>Section 1</h3>
+					  <div>
+					    <p>
+					      Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+					    </p>
+					  </div>
+					  <h3>Section 2</h3>
+					  <div>
+					    <p>
+					      <a href="#">Sed non urna.</a> Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.
+					    </p>
+					  </div>
+					  <h3>Section 3</h3>
+					  <div>
+					    <p>
+					      Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+					    </p>
+					  </div>
+					<!-- accordion end -->
+					</div>
+			<!-- demo-container end -->
+			</div>
+		<!-- doc-wrap end -->
+		</div>
+			
+		<!-- script begin -->
+		<script src="/public/script/lib/requirejs/require.js"></script>
+		<script>
+			require( ["/public/script/config/pathConfig.js"], function( ) {
+				require( [ "jquery", "scriptAccordion" ], function( $ ) {
+					$( ".container1, .container2" ).accordion();
+				} );
+			} );
+		</script>
+		<!-- script end -->
+
+	</body>
+</html>

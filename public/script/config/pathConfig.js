@@ -54,7 +54,16 @@ require.config( {
         "scriptSlideBoxtmpl": "uiSnippet/SlideBox/behaviour.js",
         "scriptInitSlideBoxtmpl": "uiSnippet/SlideBox/initialize.js",
         "notesSlideBox": "uiSnippet/SlideBox/notes.tmpl"
+        // Accordion
+        ,
+        "htmlAccordion": "uiSnippet/accordion/markup.tmpl",
+        "cssAccordion": "uiSnippet/accordion/style.css",
+        "scriptAccordion": "uiSnippet/accordion/behaviour",
+        "scriptAccordiontmpl": "uiSnippet/accordion/behaviour.js",
+        "notesAccordion": "uiSnippet/accordion/notes.tmpl"
     },
-    shim: {},
+    shim: {
+        "scriptAccordion": [ "jquery" ]
+    },
     urlArgs: "bust=" + ( new Date() ).getTime()
 } );
